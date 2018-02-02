@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.text.DecimalFormat"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="com.Java.Pointwest.UI.EmployeeDisplay"/>
+<fullyQualifiedTypeName name="com.Java.Pointwest.com.UI.UserInterface"/>
+<fullyQualifiedTypeName name="com.Java.Pointwest.beans.HRPersonnel"/>
+<fullyQualifiedTypeName name="com.Java.Pointwest.beans.SoftwareTester"/>
+<fullyQualifiedTypeName name="com.Java.Pointwest.beans.SoftwareDev"/>
+<fullyQualifiedTypeName name="com.Java.Pointwest.beans.Employee"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="java.util.logging.Logger"/>
+<fullyQualifiedTypeName name="org.apache.log4j.Logger"/>
+<fullyQualifiedTypeName name="com.Java.Pointwest.Manager.Manager"/>
+<fullyQualifiedTypeName name="java.sql.DriverManager"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="java.sql.Statement"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="com.Pointwest.Com.Java.UI.UI"/>
+<fullyQualifiedTypeName name="com.Pointwest.Com.Java.Manager.Manager"/>
+<fullyQualifiedTypeName name="com.Pointwest.Com.Java.dao.FilmDao"/>
+<fullyQualifiedTypeName name="com.Pointwest.Com.Java.beans.FilmBean"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.Java.Pointwest.Manager.Manager.AnimalType"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+</qualifiedTypeNameHistroy>

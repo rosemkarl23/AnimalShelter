@@ -1,0 +1,12 @@
+package com.Java.Pointwest.beans;
+
+public class HRPersonnel extends Employee {
+	public String firstName;
+	public String lastName;
+	public static String type = "HR Personnel";
+	public static double salary = 400.00;
+	public double hoursWorked;
+	public static double tax;
+	public static double nightDiff;
+	public double totalSalary;
+}

@@ -1,0 +1,2 @@
+log4j.appender.CA.layout = org.apache.log4j.PatternLayout
+log4j.appender.CA.layout.conversionPatter = [%C method:%M %d{HH:mm:ss,SSS} - Line %l - %m%n

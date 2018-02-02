@@ -1,0 +1,15 @@
+package com.Pointwest.Com.Java.Main;
+
+import java.sql.PreparedStatement;
+
+import com.Pointwest.Com.Java.UI.UI;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		UI sakila = new UI();
+		UI.printFilm();
+	}
+
+}

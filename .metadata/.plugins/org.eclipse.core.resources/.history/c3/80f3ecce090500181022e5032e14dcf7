@@ -1,0 +1,6 @@
+package com.Java.Pointwest.beans;
+
+public class SoftwareTester extends Employee{
+	public double salary = 850.00;
+	public double nightDiff = 1.20;
+}

@@ -1,0 +1,10 @@
+package com.Java.Pointwest.beans;
+
+public class Animal {
+	public String name = null;
+	public int age;
+	public String type = null;
+	public String gender = null;
+	public static int referenceID;
+	public String animalSound;
+}

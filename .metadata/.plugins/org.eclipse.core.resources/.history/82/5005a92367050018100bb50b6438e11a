@@ -1,0 +1,18 @@
+
+public class List {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		List<String> examplelist = new ArrayList<String>();
+		examplelist.add("Test1");
+		examplelist.add("Test2");
+		examplelist.add("Test3");
+		
+		String element0 = examplelist(0);
+		String element1 = examplelist(1);
+		String element2 = examplelist(2);
+		
+		System.out.println(element0 + ", " + element1 + ", " + element2);
+	}
+
+}

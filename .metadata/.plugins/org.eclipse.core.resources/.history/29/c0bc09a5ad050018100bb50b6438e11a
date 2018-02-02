@@ -1,0 +1,8 @@
+package com.Java.Pointwest.beans;
+
+public class Animal {
+	public String name = null;
+	public int age = 0;
+	public String type = null;
+	public String gender = null;
+}

@@ -1,0 +1,51 @@
+package com.Pointwest.Com.Java.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import org.apache.log4j.Logger;
+
+
+
+public class FilmDao {
+	
+	public static void main (String[] args) {
+		FilmDao filmDao = new FilmDao();
+		filmDao.getFilms();
+		Logger myLogger = Logger.getLogger(FilmDao.class);
+		
+	}
+
+	public void getFilms() {
+		try {
+			int ctr= 0;
+			Class.forName("com.mysql.jdbc.Driver");
+			String db = "jdbc:mysql://172.26.83.193:3306/sakila";
+			String user = "newuser";
+			String password = "password123";
+			try {
+				Connection conn = DriverManager.getConnection(db,user,password);
+				Statement statement = conn.createStatement();
+				ResultSet rs = statement.executeQuery("Select * from sakila.film;");
+				
+				while (rs.next()) {
+					System.out.println(rs.getString("title"));
+					ctr++;
+				}
+				System.out.println(ctr);
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				logger.error(e.getMessage());
+			}
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			logger.error("Connection Error encounter");
+			logger.error(e.getMessage());
+		}
+	}
+}

@@ -1,0 +1,25 @@
+package com.Pointwest.Com.Java.UI;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import com.Pointwest.Com.Java.Manager.Manager;
+import com.Pointwest.Com.Java.beans.FilmBean;
+
+public class UI {
+
+	public void printFilm () {
+		
+		Manager filmManager = new Manager();
+		List<FilmBean> filmList = new ArrayList<FilmBean>();
+		Iterator iterator = filmList.iterator();
+		while(iterator.hasNext()) {			
+			FilmBean films = (FilmBean) iterator.next();
+			
+			System.out.println(films);
+			
+		}
+	
+	}
+}

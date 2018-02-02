@@ -1,0 +1,7 @@
+package com.Java.Pointwest.beans;
+
+public class SoftwareDev extends Employee{
+	public void computeSalary() {
+		Employee.type = type;
+	}
+}

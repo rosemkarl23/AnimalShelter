@@ -1,0 +1,7 @@
+package com.Pointwest.Com.Java.Manager;
+
+import com.Pointwest.Com.Java.dao.FilmDao;
+
+public class Manager {
+	FilmDao filmDao = new FilmDao();
+}

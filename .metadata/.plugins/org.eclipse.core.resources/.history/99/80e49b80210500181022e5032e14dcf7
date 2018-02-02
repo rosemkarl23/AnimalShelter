@@ -1,0 +1,8 @@
+package com.Java.Pointwest.beans;
+
+public class SoftwareDev extends Employee{
+	public double computeSalary() {
+		totalSalary = (salary * hoursWorked) - (salary * tax);
+		return totalSalary;
+	}
+}

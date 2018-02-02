@@ -1,0 +1,108 @@
+package com.Java.Pointwest.UI;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Iterator;
+
+import com.Java.Pointwest.Manager.Manager;
+import com.Java.Pointwest.Manager.Manager.AnimalType;
+import com.Java.Pointwest.UI.RemoveAnimal;
+import com.Java.Pointwest.UI.ViewAnimal;
+import com.Java.Pointwest.beans.Animal;
+import com.Java.Pointwest.beans.Dog;
+import com.Java.Pointwest.beans.Cat;
+import com.Java.Pointwest.beans.Parrot;
+
+public class UserInterface {
+	public static void HomePage() {		
+		Scanner homeScanner = new Scanner(System.in);
+		System.out.println("Welcome to Sem's Animal Shelter!");
+		System.out.println("Please select an option: ");
+		System.out.println("1. Dog Shelter");
+		System.out.println("2. Cat Shelter");
+		System.out.println("3. Parrot Shelter");
+		System.out.print("Enter choice: ");
+		int userHomeChoice = homeScanner.nextInt();
+		UserHomeChoice(userHomeChoice);
+	}
+	
+	public static void UserHomeChoice(int userHomeChoice) {
+		if (userHomeChoice == 1) {
+			if (userHomeChoice == 1) {
+				Manager.dogMenu();
+			}
+			else if (userHomeChoice == 2) {
+				Manager.catMenu();
+			}
+			else if (userHomeChoice == 3) {
+				Manager.parrotMenu();
+			}
+			else {
+				System.out.println();
+				System.out.println("** INVALID INPUT. PLEASE TRY AGAIN **");
+				System.out.println();
+				HomePage();
+			}
+		}
+	}
+	
+	public static void UserChoice(String code, String animalType) {
+		if (code.equalsIgnoreCase("add")) {
+			Manager.addAnimal(animalType);
+		} else if (code.equalsIgnoreCase("remove")) {
+			Manager.removeAnimal(animalType);
+		} else if (code.equalsIgnoreCase("view")) {
+			
+		} else if (code.equalsIgnoreCase("back")) {
+			
+		}
+	}
+	
+	public static boolean runAgain() {
+		while (true) {
+			if (animalList.size() < 10) {
+				System.out.println("** ANIMAL SHELTER IS NOT YET FULL, DO YOU STILL WANT TO CONTINUE? **");
+				System.out.println("1. YES");
+				System.out.println("2. NO");
+				System.out.println("Enter choice: ");
+				Scanner againScanner = new Scanner(System.in);
+				int again = againScanner.nextInt();
+				if (again == 1) {
+					System.out.println();
+					HomePage();
+				} else if (again == 2) {
+					System.out.println();
+					System.out.println("** PROGRAM ENDED. THANK YOU FOR USING THE SYSTEM. **");
+				} else {
+					System.out.println();
+					System.out.println("** INVALID INPUT. PLEASE TRY AGAIN. **");
+					continue;
+				}
+			}
+			else {
+				System.out.println("** ANIMAL SHELTER IS FULL. DO YOU STILL WANT TO VIEW ANIMAL SHELTER OR REMOVE AN ANIMAL? **");
+				System.out.println("1. YES");
+				System.out.println("2. NO");
+				Scanner againScanner = new Scanner(System.in);
+				int again = againScanner.nextInt();
+				if (again == 1) {
+					System.out.println();
+					HomePage();
+				} else if (again == 2) {
+					System.out.println();
+					System.out.println("** PROGRAM ENDED. THANK YOU FOR USING THE SYSTEM. **");
+					break;
+				} else {
+					System.out.println();
+					System.out.println("** INVALID INPUT. PLEASE TRY AGAIN. **");
+					continue;
+				}
+			}
+			return false;
+		}
+		return false;
+	}
+}

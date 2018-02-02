@@ -1,0 +1,11 @@
+package com.Java.Pointwest.beans;
+
+public class SoftwareTester extends Employee{
+	public void computeSTalary() {
+		if (hoursWorked == 0.0) {
+			totalSalary = 0.0;
+		} else {
+			totalSalary = ((salary * hoursWorked) * nightDiff) * tax;
+		}
+	}
+}

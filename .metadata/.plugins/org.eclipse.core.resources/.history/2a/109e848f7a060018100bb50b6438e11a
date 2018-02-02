@@ -1,0 +1,17 @@
+package com.Java.Pointwest.Main;
+
+import com.Java.Pointwest.UI.UserInterface;
+
+public class Main {
+
+	public static void main(String[] args) {
+		boolean again = true;
+		
+		// TODO Auto-generated method stub
+		//while (again) {
+			UserInterface.HomePage();
+			//again = UserInterface.runAgain();
+		//}
+	}
+
+}

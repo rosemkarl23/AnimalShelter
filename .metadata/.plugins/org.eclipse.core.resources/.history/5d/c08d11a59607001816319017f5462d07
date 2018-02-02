@@ -1,0 +1,51 @@
+package com.Java.Pointwest.UI;
+
+import java.util.Scanner;
+
+import com.Java.Pointwest.Manager.Manager;
+
+public class UserInterface {
+	public static void HomePage() {		
+		Scanner homeScanner = new Scanner(System.in);
+		System.out.println("Welcome to Sem's Animal Shelter!");
+		System.out.println("Please select an option: ");
+		System.out.println("1. Dog Shelter");
+		System.out.println("2. Cat Shelter");
+		System.out.println("3. Parrot Shelter");
+		System.out.print("Enter choice: ");
+		int userHomeChoice = homeScanner.nextInt();
+		UserHomeChoice(userHomeChoice);
+	}
+	
+	public static void UserHomeChoice(int userHomeChoice) {
+		if (userHomeChoice == 1) {
+			if (userHomeChoice == 1) {
+				Manager.dogMenu();
+			}
+			else if (userHomeChoice == 2) {
+				Manager.catMenu();
+			}
+			else if (userHomeChoice == 3) {
+				Manager.parrotMenu();
+			}
+			else {
+				System.out.println();
+				System.out.println("** INVALID INPUT. PLEASE TRY AGAIN **");
+				System.out.println();
+				HomePage();
+			}
+		}
+	}
+	
+	public static void UserChoice(String code, String animalType) {
+		if (code.equalsIgnoreCase("add")) {
+			Manager.addAnimal(animalType);
+		} else if (code.equalsIgnoreCase("remove")) {
+			Manager.removeAnimal(animalType);
+		} else if (code.equalsIgnoreCase("view")) {
+			Manager.viewAnimal(animalType);
+		} else if (code.equalsIgnoreCase("back")) {
+			HomePage();
+		}
+	}
+}

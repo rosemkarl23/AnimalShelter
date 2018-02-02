@@ -1,0 +1,46 @@
+package com.Java.Pointwest.UI;
+
+import com.Java.Pointwest.beans.Animal;
+
+import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
+
+import com.Java.Pointwest.UI.UserInterface;
+
+public class RemoveAnimal {
+	public static void removeAnimal(List<Animal> animalList) {
+		boolean animalFound = false;
+		int i = 0;
+		
+		if (animalList.get(i)== null) {
+			System.out.println();
+			System.out.println("** NO ANIMALS IN THE SHELTER. PLEASE ADD AN ANIMAL BEFORE DELETING. **");
+			System.out.println();
+			UserInterface.HomePage();
+		} else {
+			Scanner deleteScanner = new Scanner(System.in);
+			System.out.println();
+			System.out.print("Please enter the reference ID of the animal to remove: ");
+			int deleteChoice = deleteScanner.nextInt();
+			
+			Iterator iterator = animalList.iterator();
+			while(iterator.hasNext()) {
+				Animal animal = (Animal) iterator.next();
+				if(animal.referenceID == deleteChoice) {
+					iterator.remove();
+					System.out.println();
+					System.out.println("Pet No. " + animal.referenceID + " [" + animal.name + " has been removed.");
+					System.out.println();
+					animalFound = true;
+				}
+			}
+			if (animalFound == false) {
+				System.out.println();
+				System.out.println("Animal ID not found.");
+				System.out.println();
+			}
+		}
+		UserInterface.HomePage();
+	}
+}

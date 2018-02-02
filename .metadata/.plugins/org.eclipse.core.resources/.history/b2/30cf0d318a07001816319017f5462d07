@@ -1,0 +1,263 @@
+package com.Java.Pointwest.UI;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Iterator;
+
+import com.Java.Pointwest.Manager.Manager;
+import com.Java.Pointwest.UI.RemoveAnimal;
+import com.Java.Pointwest.UI.ViewAnimal;
+import com.Java.Pointwest.beans.Animal;
+import com.Java.Pointwest.beans.Dog;
+import com.Java.Pointwest.beans.Cat;
+import com.Java.Pointwest.beans.Parrot;
+
+public class UserInterface {
+
+	static Map<Animal, String> animalList = new HashMap<>();
+	
+	public static void HomePage() {
+		Scanner homeScanner = new Scanner(System.in);
+		System.out.println("Welcome to Sem's Animal Shelter!");
+		System.out.println("Please select an option: ");
+		System.out.println("1. Dog Shelter");
+		System.out.println("2. Cat Shelter");
+		System.out.println("3. Parrot Shelter");
+		System.out.print("Enter choice: ");
+		int userHomeChoice = homeScanner.nextInt();
+		UserHomeChoice(userHomeChoice);
+	}
+	
+	public static void UserHomeChoice(int userHomeChoice) {
+		if (userHomeChoice == 1) {
+			if (userHomeChoice == 1) {
+				Manager.addDog();
+			}
+			else if (userHomeChoice == 2) {
+				Manager.addCat();
+			}
+			else if (userHomeChoice == 3) {
+				Manager.addParrot();
+			}
+			else {
+				System.out.println();
+				System.out.println("** INVALID INPUT. PLEASE TRY AGAIN **");
+				System.out.println();
+				HomePage();
+			}
+		}
+	}
+	
+	public static void SelectAnimalPage() {
+		if (animalList.size() == 0) {
+			Scanner choiceScanner = new Scanner(System.in);
+			System.out.println(animalType.toUpperCase() + " MENU PAGE!");
+			System.out.println("Please select an option: ");
+			System.out.println("1. Add a " + animalType);
+			System.out.println("2. Go Back to Home Page");
+			System.out.print("Enter choice: ");
+			int userChoice = choiceScanner.nextInt();
+			UserChoice(userChoice);
+		}
+		else if (animalList.size() == 10) {
+			Scanner choiceScanner = new Scanner(System.in);
+			System.out.println(animalType.toUpperCase() + " MENU PAGE!");
+			System.out.println("Please select an option: ");
+			System.out.println("1. Remove a " + animalType);
+			System.out.println("2. View all " + animalType + "s");
+			System.out.println("3. Go Back to Home Page");
+			System.out.print("Enter choice: ");
+			int userChoice = choiceScanner.nextInt();
+			UserChoice(userChoice);
+		}
+		else {
+			Scanner choiceScanner = new Scanner(System.in);
+			System.out.println(animalType.toUpperCase() + " MENU PAGE!");
+			System.out.println("Please select an option: ");
+			System.out.println("1. Add a " + animalType);
+			System.out.println("2. Remove a " + animalType);
+			System.out.println("3. View all " + animalType + "s");
+			System.out.println("4. Go Back to Home Page");
+			System.out.print("Enter choice: ");
+			int userChoice = choiceScanner.nextInt();
+			UserChoice(userChoice);
+		}
+	}
+	}
+	
+	public static void UserChoice(int userChoice, String animalType) {
+		if (animalList.size() == 0) {
+			if (userChoice == 1) {
+				addAnimal(animalType);
+			}
+			else if (userChoice == 2) {
+				SelectAnimalPage();
+			}
+			else {
+				System.out.println();
+				System.out.println("** INVALID INPUT. PLEASE TRY AGAIN **");
+				System.out.println();
+				SelectAnimalPage();
+			}
+		}
+		else if (animalList.size() == 10){
+			if (userChoice == 1) {
+				RemoveAnimal.removeAnimal(animalList);
+			}
+			else if (userChoice == 2) {
+				ViewAnimal.displayAnimal(animalList);
+			}
+			else if (userChoice == 3) {
+				SelectAnimalPage();
+			}
+			else {
+				System.out.println();
+				System.out.println("** INVALID INPUT. PLEASE TRY AGAIN **");
+				System.out.println();
+				SelectAnimalPage();
+			}
+		}
+		else {
+			if (userChoice == 1) {
+				enterAnimalDetails();
+			}
+			else if (userChoice == 2) {
+				RemoveAnimal.removeAnimal(animalList);
+			}
+			else if (userChoice == 3) {
+				ViewAnimal.displayAnimal(animalList);
+			}
+			else if (userChoice == 4) {
+				SelectAnimalPage();
+			}
+			else {
+				System.out.println();
+				System.out.println("** INVALID INPUT. PLEASE TRY AGAIN **");
+				System.out.println();
+				SelectAnimalPage();
+			}
+		}
+	}
+	
+	public static void addAnimal(String animalType) {
+		String name;
+		String gender;
+		int age;
+		int referenceID;
+		
+		System.out.println();
+		System.out.print("Enter Name: ");
+		Scanner nameScanner = new Scanner(System.in);
+		name = nameScanner.nextLine();
+			
+		while (true) {
+			System.out.print("Enter Age (In Years): ");
+			Scanner ageScanner = new Scanner(System.in);
+			age = ageScanner.nextInt();
+			if (age < 0) {
+				System.out.println();
+				System.out.println("** INVALID AGE. PLEASE INPUT A VALID AGE. **");
+				continue;
+			} else {
+				break;
+			}
+		}
+			
+		while (true) {
+			System.out.print("Enter Gender (Male/Female): ");
+			Scanner genderScanner = new Scanner(System.in);
+			gender = genderScanner.nextLine();
+			if (gender.equalsIgnoreCase("male")||gender.equalsIgnoreCase("female")) {
+				break;
+			} else {
+				System.out.println();
+				System.out.println("** INVALID GENDER. PLEASE INPUT A VALID GENDER. **");
+			}
+		}
+			
+		if (animalType.equalsIgnoreCase("dog")) {
+			Animal dog = new Dog();
+			dog.type = "Dog";
+			dog.name = name;
+			dog.age = age;
+			dog.gender = gender;
+			dog.referenceID = 10000 + ctr;
+			
+			animalList.add(dog);
+		} else if (animalChoice == 2) {
+			Animal cat = new Cat();
+			cat.type = "Cat";
+			cat.name = name;
+			cat.age = age;
+			cat.gender = gender;
+			cat.referenceID = 10000 + ctr;
+			
+			animalList.add(cat);
+		} else {
+			Animal parrot = new Parrot();
+			parrot.type = "Parrot";
+			parrot.name = name;
+			parrot.age = age;
+			parrot.gender = gender;
+			parrot.referenceID = 10000 + ctr;
+			
+			animalList.add(parrot);
+		}
+		
+		System.out.println();
+		System.out.println(name + " is now added.");
+		System.out.println();
+		ctr++;
+		
+	runAgain();
+	}
+	
+	public static boolean runAgain() {
+		
+		while (true) {
+			if (animalList.size() < 10) {
+				System.out.println("** ANIMAL SHELTER IS NOT YET FULL, DO YOU STILL WANT TO CONTINUE? **");
+				System.out.println("1. YES");
+				System.out.println("2. NO");
+				System.out.println("Enter choice: ");
+				Scanner againScanner = new Scanner(System.in);
+				int again = againScanner.nextInt();
+				if (again == 1) {
+					System.out.println();
+					HomePage();
+				} else if (again == 2) {
+					System.out.println();
+					System.out.println("** PROGRAM ENDED. THANK YOU FOR USING THE SYSTEM. **");
+				} else {
+					System.out.println();
+					System.out.println("** INVALID INPUT. PLEASE TRY AGAIN. **");
+					continue;
+				}
+			}
+			else {
+				System.out.println("** ANIMAL SHELTER IS FULL. DO YOU STILL WANT TO VIEW ANIMAL SHELTER OR REMOVE AN ANIMAL? **");
+				System.out.println("1. YES");
+				System.out.println("2. NO");
+				Scanner againScanner = new Scanner(System.in);
+				int again = againScanner.nextInt();
+				if (again == 1) {
+					System.out.println();
+					HomePage();
+				} else if (again == 2) {
+					System.out.println();
+					System.out.println("** PROGRAM ENDED. THANK YOU FOR USING THE SYSTEM. **");
+					break;
+				} else {
+					System.out.println();
+					System.out.println("** INVALID INPUT. PLEASE TRY AGAIN. **");
+					continue;
+				}
+			}
+			return false;
+		}
+		return false;
+	}
+}

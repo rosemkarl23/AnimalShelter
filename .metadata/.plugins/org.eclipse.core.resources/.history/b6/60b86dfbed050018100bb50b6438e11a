@@ -1,0 +1,56 @@
+package com.Java.Pointwest.UI;
+
+import com.Java.Pointwest.beans.Animal;
+import com.Java.Pointwest.beans.Dog;
+import com.Java.Pointwest.beans.Cat;
+import com.Java.Pointwest.beans.Parrot;
+
+import java.util.Iterator;
+import java.util.List;
+
+import com.Java.Pointwest.UI.UserInterface;
+
+public class ViewAnimal {
+	public static void viewAnimal(Animal[] animalList) {
+		for (int i = 0; i < animalList.length; i++) {
+			if (animalList[i] == null) {
+				System.out.println();
+				break;
+			}
+			else {
+				Animal animal = animalList[i];
+				if (animal.type.equalsIgnoreCase("Dog")) {
+					((Dog) animalList[i]).getSound();
+				} else if (animal.type.equalsIgnoreCase("Cat")) {
+					((Cat) animalList[i]).getSound();
+				} else if (animal.type.equalsIgnoreCase("Parrot")) {
+					((Parrot) animalList[i]).getSound();
+				}
+			}
+		}
+		return;
+	}
+	
+	public static void displayAnimal(List<Animal> animalList) {	
+		int i = 0;
+		
+		if (animalList.get(i) == null) {
+			System.out.println();
+			System.out.println("** NO ANIMALS IN THE SHELTER. PLEASE ADD AN ANIMAL. **");
+			System.out.println();
+			UserInterface.HomePage();
+		} else {
+			System.out.println("Meet our lovely animal friends!");
+			
+			Iterator iterator = animalList.iterator();
+			while(iterator.hasNext()) {
+				Animal animal = (Animal) iterator.next();
+				if(animal.referenceID == deleteChoice) {
+					System.out.println(animalList.get(i).referenceID + " : " + 
+					animalList[j].animalSound + " ... Hi I'm " + animalList[j].name + 
+					" the " + animalList[j].type + ", " + animalList[j].age + " years old.");
+				}
+			}
+		}
+	}
+}

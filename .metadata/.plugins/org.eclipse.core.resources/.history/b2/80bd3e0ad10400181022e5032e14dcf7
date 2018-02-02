@@ -1,0 +1,16 @@
+package com.Java.Pointwest.beans;
+
+public class SoftwareDev extends Employee{
+	public String firstName;
+	public String lastName;
+	//public final static String type = "Software Dev";
+	public static double salary = 850.00;
+	public double hoursWorked;
+	public static double tax;
+	public static double nightDiff;
+	public double totalSalary;
+	
+	public static void getType(String type) {
+		type = "Software Dev";
+	}
+}

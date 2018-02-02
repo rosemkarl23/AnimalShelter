@@ -1,0 +1,54 @@
+package com.Java.Pointwest.Main;
+
+import com.Java.Pointwest.beans.Employee;
+
+public class ObjectTester {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] id = {10001, 10002, 10003};
+		String[] name = {"Chris", "Hanz", "Sem"};
+		String[] department = {"IF", "IT", "IF"};
+		String[] jobTitle = {"Regular", "Contractual", "Regular"};
+		int[] salary = {10000, 20000, 30000};
+		int i = 0;
+		
+		
+		Employee[] employeeArray = new Employee[3];
+		
+		for(i = 0;i < id.length; i++) {
+			 
+			for(Employee employee: employeeArray){
+				employee = new Employee();
+				employee.id = id[i];
+				employee.name = name[i];
+				employee.department = department[i];
+				employee.jobTitle = jobTitle[i];
+				employee.salary = salary[i];
+				//System.out.println(displayEmployeeList(0));
+				
+			}
+		}
+		System.out.println(employeeArray[1].name);
+//		displayEmployeeList(employeeArray);
+	}
+	
+	public static String displayEmployee(Employee employee) {
+		String output;
+		if (employee.isPaidByTheHour == false) {
+			output = (employee.id + " " + employee.name + " a " + employee.jobTitle + " in the " + employee.department + " dept., is paid by the hour with a salary of " + employee.salary);
+		} else {
+			output = (employee.id + " " + employee.name + " a " + employee.jobTitle + " in the " + employee.department + " dept., is not paid by the hour with a salary of " + employee.salary);
+		}
+		return output;
+//		return null;
+	}
+	
+	public static void displayEmployeeList (Employee [] employeeArray) {
+		int ctr = 1;
+		for(Employee employee: employeeArray) {
+			System.out.println(ctr + ") " + displayEmployee(employee));
+			ctr++;
+		}
+	}
+}

@@ -1,0 +1,20 @@
+package com.Java.Pointwest.beans;
+
+public class Employee {
+	public String firstName;
+	public String lastName;
+	public static String type;
+	public double salary;
+	public double hoursWorked;
+	public double tax = 0.65;
+	public double nightDiff;
+	public double totalSalary;
+	
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		Employee.type = type;
+	}
+}

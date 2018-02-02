@@ -1,0 +1,29 @@
+package com.pointwest.java.main;
+
+import com.pointwest.java.beans.Calculator;
+import com.pointwest.java.manager.CalculatorInputException;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Calculator calculator = new Calculator();
+		int firstNum = 25;
+		int secondNum = 0;
+		
+		System.out.println("Divide numbers: ");
+		System.out.println(firstNum + "/" + secondNum);
+		try {
+			System.out.println(calculator.divide(firstNum, secondNum));
+		} catch (CalculatorInputException e) {
+			// TODO Auto-generated catch block
+			//System.out.println("Cannot divide number by zero!");
+			System.out.println(e.getDisplayMessage());
+		}
+		System.out.println("Program Ends!");
+		
+	//CAll UI
+	}
+
+}
